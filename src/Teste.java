@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Teste {
+public class Projeto{
     
     private String url;
     private String usuario;
