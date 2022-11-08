@@ -3,14 +3,14 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Projeto{
+public class projeto{
     
     private String url;
     private String usuario;
     private String senha;
     private Connection con;
 
-    Teste(){
+    projeto(){
 
         url = "jdbc:postgresql://localhost:5432/ProjetoBanco";
         usuario = "postgres";
