@@ -4,7 +4,7 @@ public class main {
     
 public static void main(String[] args) {
     
-    Teste con = new Teste();
+    projeto con = new projeto();
     String sql = "Select * from Cadastro";
     
     ResultSet rs = con.executaBusca(sql);
