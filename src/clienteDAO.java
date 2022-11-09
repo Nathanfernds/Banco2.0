@@ -1,9 +1,10 @@
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class clienteDAO {
     
-    projeto con = new projeto();
+    projeto pj = new projeto();
 
     cliente cliente = new cliente();
 
@@ -11,7 +12,7 @@ public class clienteDAO {
 
         String sql = "Select * from Cliente";
     
-        ResultSet rs = con.executaBusca(sql);
+        ResultSet rs = pj.executaBusca(sql);
     
         try {
             while(rs.next()){
@@ -28,20 +29,26 @@ public class clienteDAO {
 
     }
 
-    public void inserir(){
+    /*public void inserir(){
 
         String sql = "insert into Cliente (nome, email, agencia, conta, saldo) values (?, ?, ?, ?, ?)";
 
-        try {
-            PreparedStatement stmt = con.(sql);
-	            stmt.setString(1 , aluno.getNome());
-	            stmt.setInt(2, aluno.getIdade());
-	            stmt.setString(3 , aluno.getEstado());
+        try (Connection conn = con.executaSQL()){
+            PreparedStatement stmt = con.PreparedStatement(sql);
+	            stmt.setString(1, cliente.getNome());
+	            stmt.setString(2, cliente.getEmail());
+	            stmt.setString(3, cliente.getConta());
+                stmt.setString(4, cliente.getAgencia());
+                stmt.setFloat(5, cliente.getSaldo());
+
+                int rowsAffected = stmt.executeUpdate();
+
+                System.out.println("Inserção BEM SUCEDIDA!. Foi adicionada " + rowsAffected + " linha");
             }
         catch (Exception e) {
              e.printStackTrace();
         }
-    }
+    }*/
 
 }
 
