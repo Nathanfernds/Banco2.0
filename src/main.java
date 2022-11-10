@@ -7,7 +7,6 @@ public static void main(String[] args) {
     clienteDAO clienteDAO = new clienteDAO();
     
     clienteDAO.exibir();
-    
 }
 
 

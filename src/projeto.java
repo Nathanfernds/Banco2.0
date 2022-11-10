@@ -12,9 +12,9 @@ public class projeto{
 
     projeto(){
 
-        url = "jdbc:postgresql://localhost:5432/projeto_banco";
+        url = "jdbc:postgresql://localhost:5432/ProjetoBanco2.0";
         usuario = "postgres";
-        senha = "treinamento";
+        senha = "123";
 
         try {
             Class.forName("org.postgresql.Driver");
