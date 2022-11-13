@@ -20,53 +20,41 @@ public class cliente {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String meuNome) {
+       nome = meuNome;
     }
     
     public String getConta() {
         return conta;
     }
 
-    public void setConta(String conta) {
-        this.conta = conta;
+    public void setConta(String minhaConta) {
+       conta = minhaConta;
     }
 
     public String getAgencia() {
         return agencia;
     }
 
-    public void setAgencia(String agencia) {
-        this.agencia = agencia;
+    public void setAgencia(String minhaAgencia) {
+        agencia = minhaAgencia;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String meuEmail) {
+        email = meuEmail;
     }
 
     public float getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float saldo) {
-        this.saldo = saldo;
+    public void setSaldo(float meuSaldo) {
+        saldo = meuSaldo;
     }
 
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("cliente{");
-        sb.append("nome=").append(nome);
-        sb.append(", email='").append(email).append('\'');
-        sb.append(", agencia=").append(agencia);
-        sb.append(", conta='").append(conta).append('\'');
-        sb.append(", saldo='").append(saldo).append('\'');
-        sb.append('}');
-        
-        return sb.toString();
-    }
-    
-    
 }
+    

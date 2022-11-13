@@ -11,7 +11,6 @@ public class BancoConta2 extends ContaBanco {
 		Scanner scanner = new Scanner(System.in);
 		
 		contaBanco.Cadastro();
-        clienteDAO.exibir();
         contaBanco.informacoes();
         contaBanco.opcoes();
         
