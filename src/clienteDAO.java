@@ -2,6 +2,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -78,7 +80,42 @@ public class clienteDAO {
         }
     }
 
+    public List<cliente> Listar(){
 
+        List<cliente> Usuario = new ArrayList<>();
+        
+        Connection con = conexao.getConnection();
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+
+        try {
+            pstm = con.prepareStatement("select * from Cadastro;");
+            rs = pstm.executeQuery();
+
+            while(rs.next()){
+
+                cliente cliente = new cliente();
+
+            cliente.setNome(rs.getString(1));
+            cliente.setEmail(rs.getString(2));
+            cliente.setAgencia(rs.getString(3));
+            cliente.setConta(rs.getString(4));
+            cliente.setSaldo(rs.getInt(5));            
+
+            Usuario.add(cliente);
+            
+        }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally{
+           conexao.closeConnection(con, pstm, rs);
+        }
+
+        return Usuario;
+    }
+    
 }
 
 

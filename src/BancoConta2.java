@@ -7,14 +7,22 @@ public class BancoConta2 extends ContaBanco {
 		
 		ContaBanco contaBanco = new ContaBanco();
         clienteDAO cld = new clienteDAO();
-		
 		Scanner scanner = new Scanner(System.in);
 		
-		cld.adicionar();
+        System.out.println("Digite 1 para adicionar");
+        System.out.println("Digite 2 para listar");
+        int numero = scanner.nextInt();
+    
+    if (numero == 1) {
+        cld.adicionar();
+        contaBanco.Login();
         contaBanco.informacoes();
         contaBanco.opcoes();
-        
-        
+    } else {
+        cld.Listar();
     }
-	
+    
 }
+        
+}
+	
