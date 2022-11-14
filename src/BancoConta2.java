@@ -9,8 +9,9 @@ public class BancoConta2 extends ContaBanco {
         clienteDAO cld = new clienteDAO();
 		Scanner scanner = new Scanner(System.in);
 		
-        System.out.println("Digite 1 para adicionar");
-        System.out.println("Digite 2 para listar");
+        System.out.println("Bem vindo ao Banco!");
+        System.out.println("Digite 1 para Cadastrar");
+        System.out.println("Digite 2 para Listar");
         int numero = scanner.nextInt();
     
     if (numero == 1) {
@@ -19,7 +20,7 @@ public class BancoConta2 extends ContaBanco {
         contaBanco.informacoes();
         contaBanco.opcoes();
     } else {
-        cld.Listar();
+        cld.listar();
     }
     
 }

@@ -80,42 +80,36 @@ public class clienteDAO {
         }
     }
 
-    public List<cliente> Listar(){
-
-        List<cliente> Usuario = new ArrayList<>();
+    public List<cliente> listar() {
         
-        Connection con = conexao.getConnection();
-        PreparedStatement pstm = null;
-        ResultSet rs = null;
-
-        try {
-            pstm = con.prepareStatement("select * from Cadastro;");
-            rs = pstm.executeQuery();
-
+        List<cliente> Usuario = new ArrayList<>();
+ 
+        try (Connection conn =conexao.getConnection()) {
+           
+            String sql = "SELECT * FROM Cadastro";
+ 
+            PreparedStatement stmt = conn.prepareStatement(sql); 
+ 
+            ResultSet rs = stmt.executeQuery();
+ 
             while(rs.next()){
-
-                cliente cliente = new cliente();
-
-            cliente.setNome(rs.getString(1));
-            cliente.setEmail(rs.getString(2));
-            cliente.setAgencia(rs.getString(3));
-            cliente.setConta(rs.getString(4));
-            cliente.setSaldo(rs.getInt(5));            
-
-            Usuario.add(cliente);
-            
-        }
-
+                String nome = rs.getString("nome");
+                String email = rs.getString("email");
+                String agencia = rs.getString("agencia");
+                String conta = rs.getString("conta");
+                int saldo = rs.getInt("saldo");
+                System.out.println(nome + " - " + email + " - " + agencia  + " - " + conta  + " - " + saldo);
+                
+            }
         } catch (SQLException e) {
+            System.out.println("Listagem FALHOU!");
             e.printStackTrace();
         }
-        finally{
-           conexao.closeConnection(con, pstm, rs);
-        }
-
+ 
+       
         return Usuario;
-    }
     
+}
 }
 
 
