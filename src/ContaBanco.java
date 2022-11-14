@@ -2,7 +2,7 @@ import java.lang.invoke.SwitchPoint;
 import java.security.PublicKey;
 import java.util.Scanner;
 
-public class ContaBanco {
+public class ContaBanco{
 	
 	Scanner scanner = new Scanner(System.in);
 	clienteDAO clt = new clienteDAO();
