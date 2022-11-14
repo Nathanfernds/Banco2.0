@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class ContaBanco {
 	
 	Scanner scanner = new Scanner(System.in);
+	clienteDAO clt = new clienteDAO();
 
-	protected double saldo = 200;
+	public double saldo;
 	protected double saque;
 	protected double deposito;
 			

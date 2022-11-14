@@ -37,14 +37,14 @@ public class clienteDAO {
             String conta = scanner.next();
             Usuario.setConta(conta);
             System.out.println("\nDigite seu saldo atual:");
-            float saldo = scanner.nextFloat();
-            Usuario.setSaldo(saldo);
+            double saldoatual = scanner.nextDouble();
+            Usuario.setSaldo(saldoatual);
                
             pstm.setString(1, Usuario.getNome());
             pstm.setString(2, Usuario.getEmail());
             pstm.setString(3, Usuario.getAgencia());
             pstm.setString(4,Usuario.getConta());
-            pstm.setFloat(5, Usuario.getSaldo()); 
+            pstm.setDouble(5, Usuario.getSaldo()); 
 
                 pstm.execute();
 
@@ -53,9 +53,7 @@ public class clienteDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        finally{
-            conexao.closeConnection(con);
-        }
+        
     }
 
     public void remover() {
@@ -98,7 +96,8 @@ public class clienteDAO {
                 String agencia = rs.getString("agencia");
                 String conta = rs.getString("conta");
                 int saldo = rs.getInt("saldo");
-                System.out.println(nome + " - " + email + " - " + agencia  + " - " + conta  + " - " + saldo);
+                System.out.println("-----------------------------");
+                System.out.println("\n" + nome + " - " + email + " - " + agencia  + " - " + conta  + " - " + saldo);
                 
             }
         } catch (SQLException e) {

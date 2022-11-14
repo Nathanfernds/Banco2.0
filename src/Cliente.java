@@ -4,9 +4,9 @@ public class cliente {
     private String conta;
     private String agencia;
     private String email;
-    private float saldo;
+    public double saldo;
 
-    public cliente(String nome, String email, String agencia, String conta, float saldo) {
+    public cliente(String nome, String email, String agencia, String conta, Double saldo) {
         this.nome = nome;
         this.email = email;
         this.agencia = agencia;
@@ -48,11 +48,11 @@ public class cliente {
         email = meuEmail;
     }
 
-    public float getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float meuSaldo) {
+    public void setSaldo(Double meuSaldo) {
         saldo = meuSaldo;
     }
 
