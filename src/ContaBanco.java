@@ -93,7 +93,7 @@ public class ContaBanco{
 	//1
 	public void Login() {
 		
-        System.out.println("---- Login ----");
+        System.out.println("\n---- Login ----");
 		
 		System.out.println("\nDigite seu nome:");
         nome = scanner.next();

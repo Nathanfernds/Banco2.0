@@ -11,33 +11,30 @@ public class BancoConta2 extends ContaBanco {
 		
         System.out.println("\n---Bem vindo ao Banco!---");
         System.out.println("\nDigite 1 para Cadastrar");
-        System.out.println("\nDigite 2 para Listar\n");
+        System.out.println("\nDigite 2 para Fazer Login");
+        System.out.println("\nDigite 3 para Listar\n");
         int numero = scanner.nextInt();
+        System.out.println("\n-----------------------------");
     
-    if (numero == 1) {
-        cld.adicionar();
-    } else {
-        cld.listar();
-    }
-    
-    System.out.println("\n-----------------------------");
-    System.out.println("\nDeseja Fazer Login?");
-    System.out.println("\nDigite 1 para Fazer o Login");
-    System.out.println("\nDigite 2 para Finalizar");
-    int numero2 = scanner.nextInt();
-    
-    switch (numero2) {
+    switch (numero) {
         case 1:
+        cld.adicionar();
+            break;
+        case 2:
         contaBanco.Login();
         contaBanco.informacoes();
         contaBanco.opcoes();
             break;
+        case 3:
+        cld.listar();
+            break;
         default:
         System.out.println("\nVolte Sempre!");
             break;
-    }
         
 }
         
+}
+
 }
 	

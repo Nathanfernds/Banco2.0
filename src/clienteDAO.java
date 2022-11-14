@@ -23,7 +23,7 @@ public class clienteDAO {
             
             pstm = con.prepareStatement("insert into Cadastro (nome, email, agencia, conta, saldo) values (?, ?, ?, ?, ?);");
             
-            System.out.println("---- Cadastro ----");
+            System.out.println("\n---- Cadastro ----");
             System.out.println("\nDigite seu nome:");
             String nome = scanner.next();
             Usuario.setNome(nome);
@@ -96,9 +96,9 @@ public class clienteDAO {
                 String agencia = rs.getString("agencia");
                 String conta = rs.getString("conta");
                 int saldo = rs.getInt("saldo");
-                System.out.println("-----------------------------");
-                System.out.println("\n" + nome + " - " + email + " - " + agencia  + " - " + conta  + " - " + saldo);
                 
+                System.out.println("\n" + nome + " - " + email + " - " + agencia  + " - " + conta  + " - " + saldo);
+    
             }
         } catch (SQLException e) {
             System.out.println("Listagem FALHOU!");
