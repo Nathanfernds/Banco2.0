@@ -6,7 +6,7 @@ public class ContaBanco {
 	
 	Scanner scanner = new Scanner(System.in);
 
-	protected double saldo = 200;
+	protected double saldo;
 	protected double saque;
 	protected double deposito;
 			
@@ -18,7 +18,6 @@ public class ContaBanco {
 	protected String nome;
 	protected String agencia;	
 	
-	//*3
 	public void sacar() {
 		
 	    System.out.println("\nSaldo atual: " + saldo);
@@ -58,8 +57,7 @@ public class ContaBanco {
 		}
 			
 	}
-		
-	//*3
+	
 	public void depositar() {
 		
 		System.out.println("\nSaldo atual: " + saldo);
@@ -88,27 +86,7 @@ public class ContaBanco {
 		}
 				
 	}
-	
-	//1
-	public void Cadastro() {
-		
-        System.out.println("---- Cadastro ----");
-		
-		System.out.println("\nDigite seu nome:");
-        nome = scanner.next();
-        
-        System.out.println("\nDigite seu email:");
-        email = scanner.next();
-        
-        System.out.println("\nDigite sua agencia:"); 
-        agencia = scanner.next();
-        
-        System.out.println("\nDigite o tipo da conta:");
-        conta = scanner.next();
 
-	}
-	
-	//2
 	public void informacoes() {
 		
 		System.out.println("\n---- Informaçôes ----");
@@ -124,7 +102,6 @@ public class ContaBanco {
         System.out.println("\n---------------------");
 	}
 	
-	//3
 	public void opcoes() {
 		
 		 System.out.println("\nDigite (1) para sacar");

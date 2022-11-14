@@ -6,11 +6,11 @@ public class BancoConta2 extends ContaBanco {
 	public static void main(String[] args) {
 		
 		ContaBanco contaBanco = new ContaBanco();
-        clienteDAO clienteDAO = new clienteDAO();
+        clienteDAO cld = new clienteDAO();
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		contaBanco.Cadastro();
+		cld.adicionar();
         contaBanco.informacoes();
         contaBanco.opcoes();
         

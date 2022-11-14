@@ -21,19 +21,20 @@ public class clienteDAO {
             
             pstm = con.prepareStatement("insert into Cadastro (nome, email, agencia, conta, saldo) values (?, ?, ?, ?, ?);");
             
-            System.out.println("nome:");
+            System.out.println("---- Cadastro ----");
+            System.out.println("\nDigite seu nome:");
             String nome = scanner.next();
             Usuario.setNome(nome);
-            System.out.println("email:");
+            System.out.println("\nDigite seu email:");
             String email = scanner.next();
             Usuario.setEmail(email);
-            System.out.println("agencia:");
+            System.out.println("\nDigite sua agencia:"); 
             String agencia = scanner.next();
             Usuario.setAgencia(agencia);
-            System.out.println("conta:");
+            System.out.println("\nDigite o tipo da conta:");
             String conta = scanner.next();
             Usuario.setConta(conta);
-            System.out.println("saldo:");
+            System.out.println("\nDigite seu saldo atual:");
             float saldo = scanner.nextFloat();
             Usuario.setSaldo(saldo);
                
@@ -50,8 +51,36 @@ public class clienteDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        finally{
+            conexao.closeConnection(con);
+        }
     }
+
+    public void remover() {
+        
+        Connection con = conexao.getConnection();
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = con.prepareStatement("delete from Cadastro where email = ?;");
+            
+            pstm.setString(1, "nathanchite@mail.com");
+
+            pstm.executeUpdate();
+
+           JOptionPane.showMessageDialog(null, "Removido com sucesso","Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally{
+            conexao.closeConnection(con);
+        }
+    }
+
+
 }
+
 
 
     
